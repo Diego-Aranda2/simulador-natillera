@@ -50,27 +50,27 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
 
-    st.markdown("### 💵 Valor del préstamo")
-
-monto = st.slider(
-    "",
+  monto = st.slider(
+    "💵 Valor del préstamo",
     min_value=100000,
     max_value=3000000,
     value=100000,
     step=100000
 )
 
-st.success(f"Valor seleccionado: {cop(monto)}")
+st.caption(
+    f"Valor seleccionado: {cop(monto)}"
+)
 
-with col2:
+col1, col2 = st.columns(2)
 
+with col1:
     meses = st.selectbox(
         "📅 Plazo",
-        [1,2,3,4,5,6,7,8,9,10,11,12]
+        [1,2,3,4,5,6,7,8,9,10,11,12,15,18,24]
     )
 
-with col3:
-
+with col2:
     modalidad = st.selectbox(
         "📋 Tipo de pago",
         [
