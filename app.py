@@ -67,7 +67,7 @@ col1, col2 = st.columns(2)
 with col1:
     meses = st.selectbox(
         "📅 Plazo",
-        [1,2,3,4,5,6,7,8,9,10,11,12,15,18,24]
+        [1,2,3,4,5,6,7,8,9,10,11,12]
     )
 
 with col2:
