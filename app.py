@@ -50,17 +50,17 @@ col1, col2, col3 = st.columns(3)
 
 with col1:
 
-    monto = st.number_input(
-"💵 Valor del préstamo",
-min_value=100000,
-value=1000000,
-step=100000,
-format="%d"
+    st.markdown("### 💵 Valor del préstamo")
+
+monto = st.slider(
+    "",
+    min_value=100000,
+    max_value=3000000,
+    value=100000,
+    step=100000
 )
 
-st.caption(
-f"Valor seleccionado: {cop(monto)}"
-)
+st.success(f"Valor seleccionado: {cop(monto)}")
 
 with col2:
 
@@ -82,8 +82,15 @@ with col3:
 # ------------------------
 # BOTÓN SIMULAR
 # ------------------------
+if monto <= 0:
+    st.error("El valor del préstamo debe ser desde $100.000")
+    st.stop()
+simular = st.button(
+    "CALCULAR SIMULACIÓN",
+    use_container_width=True
+)
 
-if st.button("CALCULAR SIMULACIÓN", use_container_width=True):
+if simular:
 
     tasa = 0.04
 
