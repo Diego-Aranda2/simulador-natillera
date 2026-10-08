@@ -233,3 +233,8 @@ if simular:
         **La presente simulación es informativa y puede variar según las condiciones definitivas del crédito.**
         """
     )
+    st.link_button(
+    "📝 SOLICITAR CRÉDITO",
+    "https://forms.gle/4cYrjJpmZjZswSFF7",
+    use_container_width=True
+)
